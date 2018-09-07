@@ -10,30 +10,36 @@ function Brew(props) {
         margin: 20,
         maxWidth: 300,
         minWidth: 300,
-        backgroundColor: '#ecf0f1',
+        backgroundColor: '#333842',
         fontFamily: 'sans-serif',
         paddingTop: '50px',
-        flexDirection: 'row'
-      }
-
-      var flexContainer = {
-        display: 'flex',
         flexDirection: 'row',
-        flexWrap: 'wrap',
+        textAlign: 'center',
+        borderRadius: 10,
+        color: '#BBBBBB'
       }
 
+    var description = {
+        fontSize: 13,
+        color: '#DDDDDD'
+    }
 
+    var drinkName = {
+        fontSize: 20,
+        color: '#DDDDDD'
+    }
 
     return (
-        <div style={flexContainer}>
-            <div style={card}>
-                <h2>{props.name} | {props.brewer}</h2>
-                <h3><em>{props.description}</em></h3>
-                <h3>ABV: {props.abv}</h3> 
-                <h3>${props.price}.00</h3> 
-                <h3>{props.remaining} of 124 pints remaining</h3> 
-                <SellPint/><EditPint/>
-            </div>
+        <div style={card}>
+            <h2 style={drinkName}>{props.name} | {props.brewer}</h2>
+            <h3 style={description}><em>{props.description}</em></h3>
+            <hr/>
+            <h3>ABV: {props.abv}</h3> 
+            <h3>${props.price}.00</h3> 
+            <h3>{props.remaining} of 124 pints remaining</h3> 
+            <SellPint/>
+            <br/>
+            <EditPint/>
         </div>
     );
 }
