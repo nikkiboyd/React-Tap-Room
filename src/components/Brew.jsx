@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SellPint from "./SellPint";
+import EditPint from "./EditPint";
 
 function Brew(props) {
 
@@ -21,7 +22,7 @@ function Brew(props) {
             <h3>ABV: {props.abv}</h3> 
             <h3>${props.price}.00</h3> 
             <h3>{props.remaining} of 124 pints remaining</h3> 
-            <SellPint/>
+            <SellPint/><EditPint/>
         </div>
     );
 }
