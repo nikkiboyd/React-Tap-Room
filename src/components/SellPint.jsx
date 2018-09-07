@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
+import Brew from "./Brew";
 
-function SellPint() {
-    this.remaining -= 1;
-  
+function SellPint(props) {
+    this.remaining =-1;
+
     return (
         <div>
             <button>Sell Pint</button>
@@ -10,4 +12,7 @@ function SellPint() {
     );
 }
 
+SellPint.propTypes = {
+    brew: PropTypes.instanceOf(Brew)
+}
 export default SellPint

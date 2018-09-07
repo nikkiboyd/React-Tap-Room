@@ -27,7 +27,7 @@ Brew.propTypes = {
     description: PropTypes.string,
     abv: PropTypes.string,
     price: PropTypes.string,
-    remaining: PropTypes.string
+    remaining: PropTypes.number
 };
 
 export default Brew;
