@@ -69,6 +69,7 @@ function AboutUs() {
                 <img style={photo} src="https://images.pexels.com/photos/1267244/pexels-photo-1267244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></img><br/>
                 <img style={photo} src="https://images.pexels.com/photos/1269028/pexels-photo-1269028.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></img><br/>
                 <img style={photo} src="https://images.pexels.com/photos/1269025/pexels-photo-1269025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></img><br/>
+                <img style={photo} src="https://images.pexels.com/photos/1267357/pexels-photo-1267357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></img><br/>
                 <img style={photo} src="https://www.deschutesbrewery.com/wp-content/uploads/2015/07/bend-pub-map.png"></img>
             </div>
         </div>

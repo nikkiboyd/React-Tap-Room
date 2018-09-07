@@ -8,7 +8,8 @@ function NewBrew(){
         maxWidth: 900,
         margin: 'auto',
         textAlign: 'center',
-        color: '#DDDDDD'
+        color: '#DDDDDD',
+        borderRadius: 10
     }
 
     var title = {
@@ -30,6 +31,7 @@ function NewBrew(){
                 <img style={beerPic} src="https://cdn.shopify.com/s/files/1/1061/1924/files/Beer_Emoji.png?9898922749706957214"></img>
                 Add a new brew...
             </h1>
+            <hr/>
         </div>
         <form style={form}>
             <div className="form-row">
