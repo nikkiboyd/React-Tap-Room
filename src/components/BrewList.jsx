@@ -55,7 +55,6 @@ const masterBrewList = [
 function BrewList() {
     return (
         <div>
-            <hr/>
             {masterBrewList.map((brew, index) => 
             <Brew name={brew.name}
             brewer={brew.brewer}

@@ -1,20 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Button } from 'reactstrap';
 
 function Brew(props) {
-    var myStyle = {
+    var brewInfo = {
         backgroundColor: '#ecf0f1',
         fontFamily: 'sans-serif',
         paddingTop: '50px'
       }
     return (
-        <div style="myStyle">
+        <div style={brewInfo}>
             <h3>Name: {props.name}</h3>
             <h3>Brewery: {props.brewer}</h3>
             <h3>Description: {props.description}</h3>
             <h3>ABV: {props.abv}</h3> 
             <h3>Price: ${props.price}.00</h3> 
             <h3>{props.remaining} of 124 pints remaining</h3> 
+            <Button color="primary">primary</Button>{' '}
         </div>
     );
 }
