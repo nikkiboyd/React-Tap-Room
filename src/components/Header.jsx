@@ -12,15 +12,23 @@ function Header() {
         padding: 30
     }
 
-    var logo = {
-        width: '15%',
+    var photo = {
+        maxWidth: '200px'
+    }
+
+    var button = {
+        margin: 5
     }
 
     return (
     <header className="App-header">
         <div style={header}>
-            <img style={logo} src="http://eclipticbrewing.com/wp-content/themes/ecliptic/img/logo.png"></img>
-            <p style={nav}><Link to="/" className="btn btn-dark">Home</Link> <Link to="/new-brew" className="btn btn-dark">New Brew</Link></p>
+            <img style={photo} src="http://eclipticbrewing.com/wp-content/themes/ecliptic/img/logo.png"></img>
+            <p style={nav}>
+                <Link style={button} to="/" className="btn btn-dark">Home</Link> 
+                <Link style={button} to="/new-brew" className="btn btn-dark">New Brew</Link>
+                <Link style={button} to="/about-us" className="btn btn-dark">About Us</Link>
+            </p>
         </div>
     </header>
     );

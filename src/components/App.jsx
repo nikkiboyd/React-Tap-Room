@@ -2,6 +2,7 @@ import React from 'react';
 import BrewList from './BrewList';
 import Header from './Header';
 import NewBrew from './NewBrew';
+import AboutUs from './AboutUs';
 import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
@@ -17,6 +18,7 @@ function App(){
       <Switch>
         <Route exact path='/' component={BrewList} />
         <Route path='/new-brew' component={NewBrew} />
+        <Route path='/about-us' component={AboutUs} />
       </Switch>
     </div>
   );
