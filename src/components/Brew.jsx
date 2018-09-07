@@ -34,9 +34,9 @@ function Brew(props) {
             <h2 style={drinkName}>{props.name} | {props.brewer}</h2>
             <h3 style={description}><em>{props.description}</em></h3>
             <hr/>
-            <h3>ABV: {props.abv}</h3> 
-            <h3>${props.price}.00</h3> 
-            <h3>{props.remaining} of 124 pints remaining</h3> 
+            <h6>ABV: {props.abv}</h6> 
+            <h6>${props.price}.00</h6> 
+            <h6>{props.remaining} of 124 pints remaining</h6> 
             <SellPint/>
             <br/>
             <EditPint/>

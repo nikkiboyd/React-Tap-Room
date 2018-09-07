@@ -11,10 +11,15 @@ function Header() {
     var nav = {
         padding: 30
     }
+
+    var logo = {
+        width: '15%',
+    }
+
     return (
     <header className="App-header">
-        <div style={header} className="jumbotron">
-            <h1 className="App-title">The Salty Dog</h1>
+        <div style={header}>
+            <img style={logo} src="http://eclipticbrewing.com/wp-content/themes/ecliptic/img/logo.png"></img>
             <p style={nav}><Link to="/">Home</Link> | <Link to="/new-brew">Add New Brew</Link></p>
         </div>
     </header>

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function EditPint() {
     var button = {
@@ -8,7 +7,7 @@ function EditPint() {
 
     return (
         <div>
-            <button style={button}>Edit Details</button>
+            <button style={button} className="btn">Edit Details</button>
         </div>
     );
 }
