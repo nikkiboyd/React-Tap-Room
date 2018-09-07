@@ -5,13 +5,9 @@ import Brew from "./Brew";
 function SellPint(props) {
     // this.remaining =-1;
 
-    var button = {
-        backgroundColor: '#67FF7A',
-    }
-
     return (
         <div>
-            <button style={button} className="btn">Sell Pint</button>
+            <button className="btn btn-info">Sell Pint</button>
         </div>
     );
 }

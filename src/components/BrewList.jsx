@@ -12,7 +12,7 @@ const masterBrewList = [
         remaining: '20'
       },
       {
-        name: 'Tart N Juicy',
+        name: 'Tart n\' Juicy',
         brewer: 'Epic',
         description: 'Sour IPA',
         abv: '4.5%',
@@ -20,8 +20,8 @@ const masterBrewList = [
         remaining: '60'
       },
       {
-        name: 'Hamm\'s',
-        brewer: 'Miller/Coors',
+        name: 'PBR',
+        brewer: 'Pabst Brewing Co.',
         description: 'American Lager',
         abv: '4.7%',
         price: '3',

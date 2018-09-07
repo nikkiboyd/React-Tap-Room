@@ -31,7 +31,7 @@ function Brew(props) {
 
     return (
         <div style={card}>
-            <h2 style={drinkName}>{props.name} | {props.brewer}</h2>
+            <h2 style={drinkName}>{props.name} by {props.brewer}</h2>
             <h3 style={description}><em>{props.description}</em></h3>
             <hr/>
             <h6>ABV: {props.abv}</h6> 

@@ -20,7 +20,7 @@ function Header() {
     <header className="App-header">
         <div style={header}>
             <img style={logo} src="http://eclipticbrewing.com/wp-content/themes/ecliptic/img/logo.png"></img>
-            <p style={nav}><Link to="/">Home</Link> | <Link to="/new-brew">Add New Brew</Link></p>
+            <p style={nav}><Link to="/" className="btn btn-dark">Home</Link> <Link to="/new-brew" className="btn btn-dark">New Brew</Link></p>
         </div>
     </header>
     );
