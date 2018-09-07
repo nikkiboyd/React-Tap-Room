@@ -3,11 +3,14 @@ import React from "react";
 function FilterBy(){
 
     var filterStyles = {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     }
 
     return(
         <div style={filterStyles} class="select">
-            <h5>Filter by:</h5>
             <select>
                 <option value="allKegs">All Kegs</option>
                 <option value="reserved">Reserved Kegs</option>

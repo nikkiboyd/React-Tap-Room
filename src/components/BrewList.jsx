@@ -54,9 +54,17 @@ const masterBrewList = [
     ];
 
 function BrewList() {
+
+  var flexContainer = {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  }
+
     return (
-        <div>
-          <FilterBy/>
+      <div>
+        <FilterBy/>
+        <div style={flexContainer}>
             {masterBrewList.map((brew, index) => 
             <Brew name={brew.name}
             brewer={brew.brewer}
@@ -67,6 +75,7 @@ function BrewList() {
             key={index}/>
             )}
         </div>
+      </div>
     );
 }
 

@@ -13,16 +13,27 @@ function Brew(props) {
         backgroundColor: '#ecf0f1',
         fontFamily: 'sans-serif',
         paddingTop: '50px',
+        flexDirection: 'row'
       }
 
+      var flexContainer = {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+      }
+
+
+
     return (
-        <div style={card}>
-            <h2>{props.name} | {props.brewer}</h2>
-            <h3><em>{props.description}</em></h3>
-            <h3>ABV: {props.abv}</h3> 
-            <h3>${props.price}.00</h3> 
-            <h3>{props.remaining} of 124 pints remaining</h3> 
-            <SellPint/><EditPint/>
+        <div style={flexContainer}>
+            <div style={card}>
+                <h2>{props.name} | {props.brewer}</h2>
+                <h3><em>{props.description}</em></h3>
+                <h3>ABV: {props.abv}</h3> 
+                <h3>${props.price}.00</h3> 
+                <h3>{props.remaining} of 124 pints remaining</h3> 
+                <SellPint/><EditPint/>
+            </div>
         </div>
     );
 }
