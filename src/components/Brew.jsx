@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from 'reactstrap';
+import SellPint from "./SellPint";
 
 function Brew(props) {
     var brewInfo = {
@@ -16,7 +16,7 @@ function Brew(props) {
             <h3>ABV: {props.abv}</h3> 
             <h3>Price: ${props.price}.00</h3> 
             <h3>{props.remaining} of 124 pints remaining</h3> 
-            <Button color="primary">primary</Button>{' '}
+            <SellPint/>
         </div>
     );
 }
