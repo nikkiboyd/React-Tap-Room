@@ -10,7 +10,7 @@ function FilterBy(){
     }
 
     return(
-        <div style={filterStyles} class="select">
+        <div style={filterStyles} className="select">
             <select>
                 <option value="allKegs">All Kegs</option>
                 <option value="reserved">Reserved Kegs</option>

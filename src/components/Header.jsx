@@ -13,7 +13,7 @@ function Header() {
     }
     return (
     <header className="App-header">
-        <div style={header} class="jumbotron">
+        <div style={header} className="jumbotron">
             <h1 className="App-title">The Salty Dog</h1>
             <p style={nav}><Link to="/">Home</Link> | <Link to="/new-brew">Add New Brew</Link></p>
         </div>

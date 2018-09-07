@@ -20,7 +20,7 @@ function Brew(props) {
       }
 
     var description = {
-        fontSize: 13,
+        fontSize: 18,
         color: '#DDDDDD'
     }
 
@@ -50,7 +50,7 @@ Brew.propTypes = {
     description: PropTypes.string,
     abv: PropTypes.string,
     price: PropTypes.string,
-    remaining: PropTypes.number
+    remaining: PropTypes.string
 };
 
 export default Brew;

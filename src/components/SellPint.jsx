@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Brew from "./Brew";
 
 function SellPint(props) {
-    this.remaining =-1;
+    // this.remaining =-1;
 
     var button = {
         backgroundColor: '#67FF7A',
@@ -11,7 +11,7 @@ function SellPint(props) {
 
     return (
         <div>
-            <button style={button}>Sell Pint</button>
+            <button style={button} className="btn">Sell Pint</button>
         </div>
     );
 }
