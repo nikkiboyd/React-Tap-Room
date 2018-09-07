@@ -9,6 +9,7 @@ This application showcases my foundational knowledge of React after week one. Th
 
 Below is a screenshot of the project after phase one:
 <img src="screenshot.png">
+<img src="screenshot2.png">
 
 # _Specifications_
 <img src="ComponentStructure.png">
