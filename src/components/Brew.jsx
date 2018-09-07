@@ -2,14 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Brew(props) {
+    var myStyle = {
+        backgroundColor: '#ecf0f1',
+        fontFamily: 'sans-serif',
+        paddingTop: '50px'
+      }
     return (
-        <div>
-            <h3>{props.name}</h3>
-            <h3>{props.brewer}</h3>
-            <h3>{props.description}</h3>
-            <h3>{props.abv}</h3> 
-            <h3>{props.price}</h3> 
-            <h3>{props.remaining}</h3> 
+        <div style="myStyle">
+            <h3>Name: {props.name}</h3>
+            <h3>Brewery: {props.brewer}</h3>
+            <h3>Description: {props.description}</h3>
+            <h3>ABV: {props.abv}</h3> 
+            <h3>Price: ${props.price}.00</h3> 
+            <h3>{props.remaining} of 124 pints remaining</h3> 
         </div>
     );
 }
@@ -19,8 +24,8 @@ Brew.propTypes = {
     brewer: PropTypes.string,
     description: PropTypes.string,
     abv: PropTypes.string,
-    price: PropTypes.number,
-    remaining: PropTypes.number
+    price: PropTypes.string,
+    remaining: PropTypes.string
 };
 
 export default Brew;

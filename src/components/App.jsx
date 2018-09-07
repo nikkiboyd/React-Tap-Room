@@ -1,5 +1,4 @@
 import React from 'react';
-// import Brew from './Brew';
 import BrewList from './BrewList';
 
 // import { Switch, Route } from 'react-router-dom';
