@@ -1,5 +1,6 @@
 import React from "react";
 import Brew from "./Brew";
+import FilterBy from "./FilterBy";
 
 const masterBrewList = [
       {
@@ -55,6 +56,7 @@ const masterBrewList = [
 function BrewList() {
     return (
         <div>
+          <FilterBy/>
             {masterBrewList.map((brew, index) => 
             <Brew name={brew.name}
             brewer={brew.brewer}

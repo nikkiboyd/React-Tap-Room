@@ -1,8 +1,12 @@
 import React from "react";
 
 function FilterBy(){
+
+    var filterStyles = {
+    }
+
     return(
-        <div class="select">
+        <div style={filterStyles} class="select">
             <h5>Filter by:</h5>
             <select>
                 <option value="allKegs">All Kegs</option>
@@ -14,4 +18,4 @@ function FilterBy(){
     );
 }
 
-export default FilterBy
+export default FilterBy;
