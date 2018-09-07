@@ -1,5 +1,5 @@
 import React from "react";
-import Brew from "./components/Brew";
+import Brew from "./Brew";
 
 const masterBrewList = [
       {
