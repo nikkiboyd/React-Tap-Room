@@ -3,13 +3,19 @@ import PropTypes from "prop-types";
 import SellPint from "./SellPint";
 
 function Brew(props) {
-    var brewInfo = {
+
+    var card = {
+        padding: 20,
+        margin: 20,
+        maxWidth: 300,
+        minWidth: 300,
         backgroundColor: '#ecf0f1',
         fontFamily: 'sans-serif',
         paddingTop: '50px'
       }
+      
     return (
-        <div style={brewInfo}>
+        <div style={card}>
             <h3>Name: {props.name}</h3>
             <h3>Brewery: {props.brewer}</h3>
             <h3>Description: {props.description}</h3>
