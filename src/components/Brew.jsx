@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import BrewList from './BrewList';
+import { Link } from 'react-router-dom';
+
 
 function Brew(props) {
 
@@ -28,10 +30,24 @@ function Brew(props) {
         color: '#DDDDDD'
     }
 
-    function handleEditDetails(id) {
-        console.log('button activated for keg with name' + props.name);
-        props.onEditDetails(id);
+    var button = {
+        margin: 5
     }
+
+    function handleEditDetails(currentBrew) {  
+        props.onEditDetails({name: _name.value, brewery: _brewery.value, description: _description.value, price: _price.value, abv: _abv.value, pints: _pints.value, id: currentBrew});
+        _name.value = 'Test';
+        _brewery.value = '';
+        _description.value = '';
+        _price.value = '';
+        _abv.value = '';
+        _pints.value = '';
+    }
+
+    // function handleEditDetails(id) {
+    //     console.log('button activated for keg with name' + props.name);
+    //     props.onEditDetails(id);
+    // }
 
     return (
         <div style={card}>
@@ -41,6 +57,7 @@ function Brew(props) {
             <h6>ABV: {props.abv}</h6> 
             <h6>${props.price}.00</h6> 
             <h6>{props.pints} of 124 pints remaining</h6> 
+            <Link style={button} to="/edit" className="btn btn-dark">Home</Link> 
             <button onClick={() =>handleEditDetails(props.id)} className="btn btn-warning">Edit Details</button>
             {/* <SellPint/> */}
             {/* <EditPint/> */}

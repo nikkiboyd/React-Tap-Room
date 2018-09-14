@@ -3,6 +3,7 @@ import BrewList from './BrewList';
 import NewBrewControl from './NewBrewControl';
 import Header from './Header';
 import NewBrew from './NewBrew';
+import EditBrewForm from './EditBrewForm';
 import AboutUs from './AboutUs';
 import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
@@ -94,6 +95,7 @@ class App extends React.Component {
                                                               currentBrew={this.state.brewToEdit}
                                                               />} />
           <Route path='/about-us' component={AboutUs} />
+          <Route path='/edit' component={EditBrewForm}/>
         </Switch>
       </div>
     );

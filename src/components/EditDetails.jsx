@@ -5,7 +5,7 @@ import EditBrewForm from './EditBrewForm';
 import { Switch, Route } from 'react-router-dom';
 
 function EditDetails(props){
-
+    
   if (props.currentBrew !== null) {
     return (
       <div>
