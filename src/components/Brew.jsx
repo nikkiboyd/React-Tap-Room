@@ -3,10 +3,26 @@ import PropTypes from "prop-types";
 import BrewList from './BrewList';
 import { Link } from 'react-router-dom';
 
+class Brew extends React.Component {
+constructor(props) {
+    super(props);
+    this.state = {
+        cardStatus: 'overview'
+    };
+    this.cardOverview = this.cardOverview.bind(this);
+    this.cardEditDetails = this.cardEditDetails.bind(this);
+}
 
-function Brew(props) {
+cardOverview() {
+    this.setState({cardStatus: 'overview'});
+}
 
-    var card = {
+cardEditDetails() {
+    this.setState({cardStatus: 'editDetails'});
+}
+
+render(props) {
+    var overview = {
         padding: 20,
         margin: 20,
         maxWidth: 300,
@@ -35,90 +51,24 @@ function Brew(props) {
     }
 
     function handleEditDetails(id) {
-        console.log('button activated for keg with name' + props.name);
         props.onEditDetails({name: _name.value, brewery: _brewery.value, description: _description.value, price: _price.value, abv: _abv.value, pints: _pints.value, id: id});
-        
-        return(
-            <div>
-            <div>
-                <h1 style={title}>
-                    <img style={beerPic} src="https://cdn.shopify.com/s/files/1/1061/1924/files/Beer_Emoji.png?9898922749706957214"></img>
-                    Edit a brew...
-                </h1>
-                <hr/>
-            </div>
-            <form onSubmit={handleEditDetails} style={form}>
-                <div className="form-row">
-                    <div className="form-group col-md-4">
-                        <label>Name:</label><br/>
-                        <input 
-                            required
-                            className="form-control" 
-                            placeholder="Drop Top Amber Ale"
-                            ref={(input) => {_name = input;}}/>
-                        </div>
-                        <div className="form-group col-md-4">
-                        <label>Brewery:</label><br/>
-                        <input 
-                            required
-                            className="form-control" 
-                            placeholder="Widmer Brothers"
-                            ref={(input) => {_brewery = input;}}/>
-                        </div>
-                        <div className="form-group col-md-4">
-                        <label>Description:</label><br/>
-                        <input 
-                            required
-                            className="form-control" 
-                            placeholder="Honey malt and milk sugar"
-                            ref={(input) => {_description = input;}}/>
-                        </div>
-                </div>
-                <div className="form-row">
-                    <div className="form-group col-md-4">
-                        <label>Price:</label><br/>
-                        <input 
-                            required
-                            className="form-control" 
-                            placeholder="$6.00 per pint" 
-                            ref={(input) => {_price = input;}}/>
-                    </div>
-                    <div className="form-group col-md-4">
-                        <label>Alcohol Content:</label>
-                        <input 
-                            required
-                            className="form-control" 
-                            placeholder="5.3" 
-                            ref={(input) => {_abv = input;}}/>
-                    </div>
-                    <div className="form-group col-md-4">
-                        <label>Pints Available:</label>
-                        <input 
-                            required
-                            className="form-control" 
-                            placeholder="124"
-                            ref={(input) => {_pints = input;}}/>
-                    </div>  
-                </div>
-                <button className="btn btn-success" type="submit">Add Keg</button>
-            </form>
-        </div>
-        );
+        console.log('button activated for keg with name' + props.name);
     }
 
     return (
-        <div style={card}>
-            <h2 style={drinkName}>{props.name} by {props.brewery}</h2>
-            <h3 style={description}><em>{props.description}</em></h3>
+        <div style={overview}>
+            <h2 style={drinkName}>{this.props.name} by {this.props.brewery}</h2>
+            <h3 style={description}><em>{this.props.description}</em></h3>
             <hr/>
-            <h6>ABV: {props.abv}</h6> 
-            <h6>${props.price}.00</h6> 
-            <h6>{props.pints} of 124 pints remaining</h6> 
-            <button onClick={() =>handleEditDetails(props.id)} className="btn btn-warning">Edit Details</button>
+            <h6>ABV: {this.props.abv}</h6> 
+            <h6>${this.props.price}.00</h6> 
+            <h6>{this.props.pints} of 124 pints remaining</h6> 
+            <button onClick={() =>handleEditDetails(this.props.id)} className="btn btn-warning">Edit Details</button>
             {/* <SellPint/> */}
             {/* <EditPint/> */}
         </div>
     );
+    }
 }
 
 Brew.propTypes = {
