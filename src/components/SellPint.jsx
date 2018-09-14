@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 import Brew from "./Brew";
 
 function SellPint(props) {
-    // this.remaining =-1;
+    
+    function sell() {
+        props.brew.pints -= 1;
+    }
 
     return (
         <div>
-            <button className="btn btn-info">Sell Pint</button>
+            <button onClick={sell} className="btn btn-info">Sell Pint</button>
         </div>
     );
 }
@@ -15,4 +18,5 @@ function SellPint(props) {
 SellPint.propTypes = {
     brew: PropTypes.instanceOf(Brew)
 }
+
 export default SellPint
