@@ -22,7 +22,8 @@ function BrewList(props) {
             abv={brew.abv}
             price={brew.price}
             pints={brew.pints}
-            key={index}/>
+            key={index}
+            onEditDetails={props.onEditDetails}/>
             )}
         </div>
       </div>
@@ -30,7 +31,8 @@ function BrewList(props) {
 }
 
 BrewList.propTypes = {
-  brewList: PropTypes.array
+  brewList: PropTypes.array,
+  onEditDetails: PropTypes.func
 };
 
 export default BrewList;

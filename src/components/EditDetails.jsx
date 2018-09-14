@@ -1,6 +1,6 @@
 import React from "react";
 
-function EditPint() {
+function EditDetails() {
 
     return (
         <div>
@@ -9,4 +9,4 @@ function EditPint() {
     );
 }
 
-export default EditPint
+export default EditDetails;

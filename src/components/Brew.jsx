@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SellPint from "./SellPint";
-import EditPint from "./EditPint";
+import BrewList from './BrewList';
 
 function Brew(props) {
 
@@ -30,6 +29,7 @@ function Brew(props) {
     }
 
     function handleEditDetails(id) {
+        console.log('button activated for keg with name' + props.name);
         props.onEditDetails(id);
     }
 
