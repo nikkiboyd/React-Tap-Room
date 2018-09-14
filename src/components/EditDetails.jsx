@@ -1,12 +1,32 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import BrewList from './BrewList';
+import EditBrewForm from './EditBrewForm';
+import { Switch, Route } from 'react-router-dom';
 
-function EditDetails() {
+function EditDetails(props){
 
+  if (props.currentBrew !== null) {
     return (
-        <div>
-            <button className="btn btn-warning">Edit Details</button>
-        </div>
+      <div>
+        <Switch>
+          <Route path='/' render={()=><EditBrewForm currentBrew={props.currentBrew}/>}/>
+        </Switch>
+      </div>
+      );
+  } else {
+    return (
+      <div>
+        <BrewList brewList={props.brewList} onEditDetails={props.onEditEdtails}/>
+      </div>
     );
+  }
 }
+
+EditDetails.propTypes = {
+  brewList: PropTypes.object,
+  onEditDetails: PropTypes.func,
+  currentBrew: PropTypes.object
+};
 
 export default EditDetails;
