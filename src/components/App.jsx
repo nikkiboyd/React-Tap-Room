@@ -1,5 +1,6 @@
 import React from 'react';
 import BrewList from './BrewList';
+import NewBrewControl from './NewBrewControl';
 import Header from './Header';
 import NewBrew from './NewBrew';
 import AboutUs from './AboutUs';
@@ -31,8 +32,8 @@ class App extends React.Component {
         </Helmet>
         <Header/>
         <Switch>
-          <Route exact path='/' component={BrewList} />
-          <Route path='/new-brew' component={NewBrew} />
+          <Route exact path='/' render={()=><BrewList brewList={this.state.masterBrewList} />} />
+          <Route path='/new-brew' render={()=><NewBrewControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route path='/about-us' component={AboutUs} />
         </Switch>
       </div>
