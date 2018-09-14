@@ -49,32 +49,50 @@ function NewBrew(props){
             </h1>
             <hr/>
         </div>
-        <form style={form}>
+        <form onSubmit={handleNewBrewFormSubmission} style={form}>
             <div className="form-row">
                 <div className="form-group col-md-6">
                     <label>Name:</label><br/>
-                    <input className="form-control" placeholder="Drop Top Amber Ale"></input>
+                    <input 
+                        className="form-control" 
+                        placeholder="Drop Top Amber Ale"
+                        ref={(input) => {_name = input;}}/>
                     </div>
                     <div className="form-group col-md-6">
                     <label>Brewery:</label><br/>
-                    <input className="form-control" placeholder="Widmer Brothers"></input>
+                    <input 
+                        className="form-control" 
+                        placeholder="Widmer Brothers"
+                        ref={(input) => {_brewery = input;}}/>
                     </div>
             </div>
             <div className="form-row">
                 <div className="form-group col-md-4">
                     <label>Price:</label><br/>
-                    <input className="form-control" placeholder="$6.00 per pint" type="number"></input>
+                    <input 
+                        className="form-control" 
+                        placeholder="$6.00 per pint" 
+                        type="number"
+                        ref={(input) => {_price = input;}}/>
                 </div>
                 <div className="form-group col-md-4">
                     <label>Alcohol Content:</label>
-                    <input className="form-control" placeholder="5.3" type="number"></input>
+                    <input 
+                        className="form-control" 
+                        placeholder="5.3" 
+                        type="number"
+                        ref={(input) => {_abv = input;}}/>
                 </div>
                 <div className="form-group col-md-4">
                     <label>Pints Available:</label>
-                    <input className="form-control" value="124" type="number"></input>
+                    <input 
+                        className="form-control" 
+                        value="124" 
+                        type="number"
+                        ref={(input) => {_pints = input;}}/>
                 </div>  
             </div>
-            <button className="btn btn-success">Add Keg</button>
+            <button className="btn btn-success" type="submit">Add Keg</button>
         </form>
     </div>
   );
