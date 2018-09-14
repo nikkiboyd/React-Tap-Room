@@ -15,7 +15,7 @@ Below is a screenshot of the project after phase one:
 This component tree illustrates the relationship between components and the unidirectional flow of data throughout the application (aside from the EditDetails component, which is a feature currently in development). The stateful app component passes down its state and methods to the NewBrewControl component, so that user input can be saved to the MasterBrewList. I've also refactored the NewBrewControl component to become stateful. It passes down state to the determine whether or not the form is ready for the user to received. The user changes the state of the component by agreeing to the conditions, which triggers the form for creating a new brew entry to appear. Since this was a bonus feature, I did not have time to include it in my original component tree.
 
 
-<img src="UpdatedCompontentTreeWithState.png">
+<img src="UpatedCompontentTreeWithState.png.png">
 
 # _Installation for OSX_
 - Download the repository from GitHub (https://github.com/nikkiboyd/React-Tap-Room)
