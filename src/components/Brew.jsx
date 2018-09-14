@@ -108,7 +108,7 @@ function Brew(props) {
 
     return (
         <div style={card}>
-            <h2 style={drinkName}>{props.name} by {props.brewer}</h2>
+            <h2 style={drinkName}>{props.name} by {props.brewery}</h2>
             <h3 style={description}><em>{props.description}</em></h3>
             <hr/>
             <h6>ABV: {props.abv}</h6> 
@@ -123,7 +123,7 @@ function Brew(props) {
 
 Brew.propTypes = {
     name: PropTypes.string,
-    brewer: PropTypes.string,
+    brewery: PropTypes.string,
     description: PropTypes.string,
     abv: PropTypes.string,
     price: PropTypes.string,
