@@ -6,22 +6,38 @@ import AboutUs from './AboutUs';
 import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
-function App(){
 
-  return (
-    <div className="container">
-      <Helmet>
-        <style>{'body { background-color: #282C34 }'}</style>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
-      </Helmet>
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={BrewList} />
-        <Route path='/new-brew' component={NewBrew} />
-        <Route path='/about-us' component={AboutUs} />
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterBrewList: []
+    };
+    this.handleAddingNewBrewToList = this.handleAddingNewBrewToList.bind(this);
+  }
+
+  handleAddingNewBrewToList(newBrew){
+    var newMasterBrewList = this.state.masterBrewList.slice();
+    newMasterBrewList.push(newBrew);
+    this.setState({masterBrewList: newMasterBrewList});
+  }
+
+  render(){
+    return (
+      <div className="container">
+        <Helmet>
+          <style>{'body { background-color: #282C34 }'}</style>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+        </Helmet>
+        <Header/>
+        <Switch>
+          <Route exact path='/' component={BrewList} />
+          <Route path='/new-brew' component={NewBrew} />
+          <Route path='/about-us' component={AboutUs} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
