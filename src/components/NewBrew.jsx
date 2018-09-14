@@ -10,7 +10,7 @@ function NewBrew(props){
 
     function handleNewBrewFormSubmission(event) {
         event.preventDefault();
-        props.onNewBreCreation({name: _name.value, brewery: _brewery.value, price: _price.value, abv: _abv.value, pints: _pints.value});
+        props.onNewBrewCreation({name: _name.value, brewery: _brewery.value, price: _price.value, abv: _abv.value, pints: _pints.value});
         _name.value = '';
         _brewery.value = '';
         _price.value = '';
