@@ -36,7 +36,7 @@ function Brew(props) {
             <hr/>
             <h6>ABV: {props.abv}</h6> 
             <h6>${props.price}.00</h6> 
-            <h6>{props.remaining} of 124 pints remaining</h6> 
+            <h6>{props.pints} of 124 pints remaining</h6> 
             <SellPint/>
             <br/>
             <EditPint/>
@@ -50,7 +50,7 @@ Brew.propTypes = {
     description: PropTypes.string,
     abv: PropTypes.string,
     price: PropTypes.string,
-    remaining: PropTypes.string
+    pints: PropTypes.pints
 };
 
 export default Brew;

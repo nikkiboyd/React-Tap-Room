@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 function NewBrew(props){
     let _name = null;
     let _brewery = null;
+    let _description = null;
     let _price = null;
     let _abv = null;
     let _pints = null;
 
     function handleNewBrewFormSubmission(event) {
         event.preventDefault();
-        props.onNewBrewCreation({name: _name.value, brewery: _brewery.value, price: _price.value, abv: _abv.value, pints: _pints.value});
+        props.onNewBrewCreation({name: _name.value, brewery: _brewery.value, description: _description.value, price: _price.value, abv: _abv.value, pints: _pints.value});
         _name.value = '';
         _brewery.value = '';
+        _description.value = '';
         _price.value = '';
         _abv.value = '';
         _pints.value = '';
@@ -51,7 +53,7 @@ function NewBrew(props){
         </div>
         <form onSubmit={handleNewBrewFormSubmission} style={form}>
             <div className="form-row">
-                <div className="form-group col-md-6">
+                <div className="form-group col-md-4">
                     <label>Name:</label><br/>
                     <input 
                         required
@@ -59,13 +61,21 @@ function NewBrew(props){
                         placeholder="Drop Top Amber Ale"
                         ref={(input) => {_name = input;}}/>
                     </div>
-                    <div className="form-group col-md-6">
+                    <div className="form-group col-md-4">
                     <label>Brewery:</label><br/>
                     <input 
                         required
                         className="form-control" 
                         placeholder="Widmer Brothers"
                         ref={(input) => {_brewery = input;}}/>
+                    </div>
+                    <div className="form-group col-md-4">
+                    <label>Description:</label><br/>
+                    <input 
+                        required
+                        className="form-control" 
+                        placeholder="Honey malt and milk sugar"
+                        ref={(input) => {_description = input;}}/>
                     </div>
             </div>
             <div className="form-row">
@@ -90,8 +100,7 @@ function NewBrew(props){
                     <input 
                         required
                         className="form-control" 
-                        value="124" 
-                        type="number"
+                        placeholder="124"
                         ref={(input) => {_pints = input;}}/>
                 </div>  
             </div>

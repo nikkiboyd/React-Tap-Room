@@ -21,7 +21,7 @@ function BrewList(props) {
             description={brew.description}
             abv={brew.abv}
             price={brew.price}
-            remaining={brew.remaining}
+            pints={brew.pints}
             key={index}/>
             )}
         </div>
