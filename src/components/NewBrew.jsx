@@ -54,6 +54,7 @@ function NewBrew(props){
                 <div className="form-group col-md-6">
                     <label>Name:</label><br/>
                     <input 
+                        required
                         className="form-control" 
                         placeholder="Drop Top Amber Ale"
                         ref={(input) => {_name = input;}}/>
@@ -61,6 +62,7 @@ function NewBrew(props){
                     <div className="form-group col-md-6">
                     <label>Brewery:</label><br/>
                     <input 
+                        required
                         className="form-control" 
                         placeholder="Widmer Brothers"
                         ref={(input) => {_brewery = input;}}/>
@@ -70,22 +72,23 @@ function NewBrew(props){
                 <div className="form-group col-md-4">
                     <label>Price:</label><br/>
                     <input 
+                        required
                         className="form-control" 
                         placeholder="$6.00 per pint" 
-                        type="number"
                         ref={(input) => {_price = input;}}/>
                 </div>
                 <div className="form-group col-md-4">
                     <label>Alcohol Content:</label>
                     <input 
+                        required
                         className="form-control" 
                         placeholder="5.3" 
-                        type="number"
                         ref={(input) => {_abv = input;}}/>
                 </div>
                 <div className="form-group col-md-4">
                     <label>Pints Available:</label>
                     <input 
+                        required
                         className="form-control" 
                         value="124" 
                         type="number"
