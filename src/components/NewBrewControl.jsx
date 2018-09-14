@@ -1,5 +1,6 @@
 import React from 'react';
 import NewBrew from './NewBrew';
+import Terms from './Terms';
 import PropTypes from 'prop-types';
 
 class NewBrewControl extends React.Component {
@@ -20,7 +21,7 @@ class NewBrewControl extends React.Component {
         if (this.state.formVisisbleOnPage){
             currentlyVisibleContent = <NewBrew onNewBrewCreation={this.props.onNewBrewCreation}/>;
         } else {
-            currentlyVisibleContent = <ConfirmationQuestions onAddBrewConfirmation={this.handleAddBrewConfirmation}/>;
+            currentlyVisibleContent = <Terms onAddBrewConfirmation={this.handleAddBrewConfirmation}/>;
         }
         return (
             <div>
