@@ -29,6 +29,10 @@ function Brew(props) {
         color: '#DDDDDD'
     }
 
+    function handleEditDetails(id) {
+        props.onEditDetails(id);
+    }
+
     return (
         <div style={card}>
             <h2 style={drinkName}>{props.name} by {props.brewer}</h2>
@@ -37,9 +41,9 @@ function Brew(props) {
             <h6>ABV: {props.abv}</h6> 
             <h6>${props.price}.00</h6> 
             <h6>{props.pints} of 124 pints remaining</h6> 
-            <SellPint/>
-            <br/>
-            <EditPint/>
+            <button onClick={() =>handleEditDetails(props.id)} className="btn btn-warning">Edit Details</button>
+            {/* <SellPint/> */}
+            {/* <EditPint/> */}
         </div>
     );
 }
@@ -50,7 +54,9 @@ Brew.propTypes = {
     description: PropTypes.string,
     abv: PropTypes.string,
     price: PropTypes.string,
-    pints: PropTypes.string
+    pints: PropTypes.string,
+    id: PropTypes.string,
+    onEditDetails: PropTypes.func
 };
 
 export default Brew;

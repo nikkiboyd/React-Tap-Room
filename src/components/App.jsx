@@ -12,15 +12,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterBrewList: []
+      masterBrewList: [],
+      brewToEdit: null
     };
     this.handleAddingNewBrewToList = this.handleAddingNewBrewToList.bind(this);
+    this.handleEditingBrewDetails = this.handleEditingBrewDetails.bind(this);
   }
 
   handleAddingNewBrewToList(newBrew){
     var newMasterBrewList = this.state.masterBrewList.slice();
     newMasterBrewList.push(newBrew);
     this.setState({masterBrewList: newMasterBrewList});
+  }
+
+  handleEditingBrewDetails(id){
+    let currentBrew = Object.assign({}, this.state.masterBrewList[id], {});
+    this.setState({brewToEdit: currentBrew});
   }
 
   render(){
@@ -33,7 +40,10 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><BrewList brewList={this.state.masterBrewList} />} />
-          <Route path='/new-brew' render={()=><NewBrewControl onNewBrewCreation={this.handleAddingNewBrewToList} />} />
+          <Route path='/new-brew' render={()=><NewBrewControl onNewBrewCreation={this.handleAddingNewBrewToList} 
+                                                              onEditDetails={this.handleEditingBrewDetails} 
+                                                              currentBrew={this.state.brewToEdit}
+                                                              />} />
           <Route path='/about-us' component={AboutUs} />
         </Switch>
       </div>
