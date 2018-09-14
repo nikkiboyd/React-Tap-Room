@@ -9,7 +9,7 @@ class NewBrewControl extends React.Component {
         this.state = {
             formVisibleOnPage: false
         };
-        this.handleAddBrewConfirmation = this.hamdleAddBrewConfirmation.bind(this);
+        this.handleAddBrewConfirmation = this.handleAddBrewConfirmation.bind(this);
     }
 
     handleAddBrewConfirmation() {
@@ -18,7 +18,7 @@ class NewBrewControl extends React.Component {
 
     render(){
         let currentlyVisibleContent = null;
-        if (this.state.formVisisbleOnPage){
+        if (this.state.formVisibleOnPage){
             currentlyVisibleContent = <NewBrew onNewBrewCreation={this.props.onNewBrewCreation}/>;
         } else {
             currentlyVisibleContent = <Terms onAddBrewConfirmation={this.handleAddBrewConfirmation}/>;

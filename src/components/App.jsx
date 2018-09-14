@@ -33,7 +33,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><BrewList brewList={this.state.masterBrewList} />} />
-          <Route path='/new-brew' render={()=><NewBrewControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route path='/new-brew' render={()=><NewBrewControl onNewBrewCreation={this.handleAddingNewBrewToList} />} />
           <Route path='/about-us' component={AboutUs} />
         </Switch>
       </div>
