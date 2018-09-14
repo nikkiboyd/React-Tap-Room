@@ -1,6 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function NewBrew(){
+function NewBrew(props){
+    let _name = null;
+    let _brewery = null;
+    let _price = null;
+    let _abv = null;
+    let _pints = null;
+
+    function handleNewBrewFormSubmission(event) {
+        event.preventDefault();
+        props.onNewBreCreation({name: _name.value, brewery: _brewery.value, price: _price.value, abv: _abv.value, pints: _pints.value});
+        _name.value = '';
+        _brewery.value = '';
+        _price.value = '';
+        _abv.value = '';
+        _pints.value = '';
+    }
 
     var form = {
         padding: 50,
@@ -40,7 +56,7 @@ function NewBrew(){
                     <input className="form-control" placeholder="Drop Top Amber Ale"></input>
                     </div>
                     <div className="form-group col-md-6">
-                    <label>Brand:</label><br/>
+                    <label>Brewery:</label><br/>
                     <input className="form-control" placeholder="Widmer Brothers"></input>
                     </div>
             </div>
@@ -63,5 +79,9 @@ function NewBrew(){
     </div>
   );
 }
+
+NewBrew.propTypes = {
+    onNewBrewCreation: PropTypes.func
+};
 
 export default NewBrew;
