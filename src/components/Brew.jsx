@@ -21,7 +21,7 @@ cardEditDetails() {
     this.setState({cardStatus: 'editDetails'});
 }
 
-render(props) {
+render() {
     var overview = {
         padding: 20,
         margin: 20,
@@ -50,12 +50,7 @@ render(props) {
         margin: 5
     }
 
-    function handleEditDetails(id) {
-        props.onEditDetails({name: _name.value, brewery: _brewery.value, description: _description.value, price: _price.value, abv: _abv.value, pints: _pints.value, id: id});
-        console.log('button activated for keg with name' + props.name);
-    }
-
-    return (
+    var overview = 
         <div style={overview}>
             <h2 style={drinkName}>{this.props.name} by {this.props.brewery}</h2>
             <h3 style={description}><em>{this.props.description}</em></h3>
@@ -63,11 +58,89 @@ render(props) {
             <h6>ABV: {this.props.abv}</h6> 
             <h6>${this.props.price}.00</h6> 
             <h6>{this.props.pints} of 124 pints remaining</h6> 
-            <button onClick={() =>handleEditDetails(this.props.id)} className="btn btn-warning">Edit Details</button>
+            <button onClick={() => this.cardEditDetails(this.props.id)} className="btn btn-warning">Edit Details</button>
             {/* <SellPint/> */}
             {/* <EditPint/> */}
-        </div>
-    );
+         </div>
+
+    var editDetails = 
+        <div>
+        <form>
+            <div className="form-row">
+                <div className="form-group col-md-4">
+                    <label>Name:</label><br/>
+                    <input 
+                        required
+                        className="form-control" 
+                        placeholder="Drop Top Amber Ale"
+                        ref={(input) => {_name = input;}}/>
+                    </div>
+                    <div className="form-group col-md-4">
+                    <label>Brewery:</label><br/>
+                    <input 
+                        required
+                        className="form-control" 
+                        placeholder="Widmer Brothers"
+                        ref={(input) => {_brewery = input;}}/>
+                    </div>
+                    <div className="form-group col-md-4">
+                    <label>Description:</label><br/>
+                    <input 
+                        required
+                        className="form-control" 
+                        placeholder="Honey malt and milk sugar"
+                        ref={(input) => {_description = input;}}/>
+                    </div>
+            </div>
+            <div className="form-row">
+                <div className="form-group col-md-4">
+                    <label>Price:</label><br/>
+                    <input 
+                        required
+                        className="form-control" 
+                        placeholder="$6.00 per pint" 
+                        ref={(input) => {_price = input;}}/>
+                </div>
+                <div className="form-group col-md-4">
+                    <label>Alcohol Content:</label>
+                    <input 
+                        required
+                        className="form-control" 
+                        placeholder="5.3" 
+                        ref={(input) => {_abv = input;}}/>
+                </div>
+                <div className="form-group col-md-4">
+                    <label>Pints Available:</label>
+                    <input 
+                        required
+                        className="form-control" 
+                        placeholder="124"
+                        ref={(input) => {_pints = input;}}/>
+                </div>  
+            </div>
+            <button className="btn btn-success" type="submit">Add Keg</button>
+        </form>
+    </div>
+
+    if(this.state.cardStatus = 'overview') {
+        return (
+            <div style={this.state}>
+               {overview}
+            </div>
+            );
+    } else {
+        return (
+            <div style={this.state}>
+               {editDetails}
+            </div>
+            );
+    }
+
+    // return (
+    //     <div style={this.state}>
+    //        {overview}
+    //     </div>
+    //     );
     }
 }
 
