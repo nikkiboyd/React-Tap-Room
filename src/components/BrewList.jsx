@@ -15,7 +15,7 @@ function BrewList(props) {
       <div>
         <FilterBy/>
         <div style={flexContainer}>
-            {props.brewList.map((brew, index) => 
+            {props.brewList.map((brew, index) =>
             <Brew name={brew.name}
             brewery={brew.brewery}
             description={brew.description}

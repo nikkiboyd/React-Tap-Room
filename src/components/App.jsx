@@ -89,9 +89,9 @@ class App extends React.Component {
         </Helmet>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><BrewList brewList={this.state.masterBrewList} />} />
-          <Route path='/new-brew' render={()=><NewBrewControl onNewBrewCreation={this.handleAddingNewBrewToList} 
-                                                              onEditDetails={this.handleEditingBrewDetails} 
+          <Route exact path='/' render={()=><BrewList brewList={this.state.masterBrewList onEditDetails={this.state.handleEditingBrewDetails}} />} />
+          <Route path='/new-brew' render={()=><NewBrewControl onNewBrewCreation={this.handleAddingNewBrewToList}
+                                                              onEditDetails={this.handleEditingBrewDetails}
                                                               currentBrew={this.state.brewToEdit}
                                                               />} />
           <Route path='/about-us' component={AboutUs} />
